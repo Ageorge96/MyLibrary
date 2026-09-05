@@ -1,8 +1,6 @@
-import { StatusBar, StyleSheet, Text, useColorScheme, View } from 'react-native';
-import {
-  SafeAreaProvider,
-
-} from 'react-native-safe-area-context';
+import { StatusBar, StyleSheet, useColorScheme, View } from 'react-native';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
+import { Navigator } from './navigation/navigator';
 
 function App() {
   const isDarkMode = useColorScheme() === 'dark';
@@ -16,10 +14,9 @@ function App() {
 }
 
 function AppContent() {
-
   return (
     <View style={styles.container}>
-      <Text>Library</Text>
+      <Navigator />
     </View>
   );
 }
@@ -27,9 +24,6 @@ function AppContent() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#f6eee3',
-    justifyContent: "center",
-    alignItems: "center",
   },
 });
 
