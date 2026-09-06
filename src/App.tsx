@@ -1,5 +1,5 @@
-import { StatusBar, StyleSheet, useColorScheme, View } from 'react-native';
-import { SafeAreaProvider } from 'react-native-safe-area-context';
+import { StatusBar, StyleSheet, useColorScheme } from 'react-native';
+import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 import { Navigator } from './navigation/navigator';
 
 function App() {
@@ -15,9 +15,9 @@ function App() {
 
 function AppContent() {
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <Navigator />
-    </View>
+    </SafeAreaView>
   );
 }
 

@@ -4,7 +4,7 @@ export function HomeScreen() {
 
   return (
     <View style={styles.container} >
-      <Text>Library</Text>
+      <Text>Home</Text>
     </View>
   )
 }
