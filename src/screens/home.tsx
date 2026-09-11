@@ -1,24 +1,27 @@
 import { StyleSheet, Text, View } from 'react-native';
+import { BookCardAlt } from '../common/components/book-card/book-card-alt';
+import { BookCard } from '../common/components/book-card';
 
 export function HomeScreen() {
+
   return (
     <View style={styles.container}>
-      <View style={styles.homeSections}>
-        <Text style={styles.sectionHeading}>My Library</Text>
-        <View style={styles.bookCard}>
-          <Text>Book card</Text>
-        </View>
+      <View style={styles.header} >
+        <Text style={styles.title} >Andre's Library</Text>
       </View>
-      <View style={styles.homeSections}>
+      <View style={styles.carousalView} >
+        <Text style={{fontSize: 32}} >Carousal Placeholder</Text>
+      </View>
+      <View style={styles.homeSection}>
         <Text style={styles.sectionHeading}>My Bookmarks</Text>
-        <View style={styles.bookCard}>
-          <Text>Book card</Text>
+        <View>
+          <BookCard />
         </View>
       </View>
-      <View style={styles.homeSections}>
+      <View style={styles.homeSection}>
         <Text style={styles.sectionHeading}>My Wishlist</Text>
-        <View style={styles.bookCard}>
-          <Text>Book card</Text>
+        <View>
+          <BookCardAlt />
         </View>
       </View>
     </View>
@@ -28,30 +31,29 @@ export function HomeScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'space-around',
-    alignItems: 'flex-start',
   },
-  homeSections: {
-    flex: 1,
+  header: {
+    alignItems: 'center',
+  },
+  title: {
+    fontSize: 36,
+  },
+  carousalView: {
+    height: '30%',
+    backgroundColor: 'gray',
+    // styles to delete
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  homeSection: {
+    height: '23%',
     paddingTop: 8,
     paddingHorizontal: 8,
-    paddingBottom: 20,
+    marginBottom: 6,
     justifyContent: 'flex-start',
   },
   sectionHeading: {
     fontSize: 24,
     marginBottom: 8,
-  },
-  bookCard: {
-    flex: 1,
-    width: 300,
-    backgroundColor: '#e5decf',
-    borderColor: '#b4b4b4',
-    borderWidth: 1,
-    borderRadius: 24,
-    elevation: 14,
-    // placeholder styles = to be deleted
-    justifyContent: 'center',
-    alignItems: 'center',
   },
 });
