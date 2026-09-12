@@ -47,7 +47,7 @@ export function BookshelfScreen() {
         </View>
       </View>
 
-      {/* Extra to be deleted */}
+      {/* Extra items to be deleted */}
       <View style={styles.shelfItemContainer} id="Shelf Item">
         <View style={styles.shelfItemContent}>
           <Text style={styles.shelfItemText}>Title:</Text>

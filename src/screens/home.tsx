@@ -1,6 +1,6 @@
 import { StyleSheet, Text, View } from 'react-native';
-import { BookCardAlt } from '../common/components/book-card/book-card-alt';
-import { BookCard } from '../common/components/book-card';
+import { BookCardAlt } from '@components/book-card/book-card-alt';
+import { BookCard } from '@components/book-card';
 
 export function HomeScreen() {
 

@@ -1,5 +1,11 @@
 {
   "extends": "@react-native/typescript-config",
+  "compilerOptions": {
+    "types": ["vitest"],
+    "paths": {
+      "@components/*": ["./src/common/components/*"]
+    }
+  },
   "include": ["**/*.ts", "**/*.tsx"],
   "exclude": ["**/node_modules", "**/Pods"]
 }
