@@ -1,6 +1,11 @@
+import { ShelfItem } from '@components/shelf-item/shelf-item';
 import { Button, StyleSheet, Text, TextInput, View } from 'react-native';
+import { getMockBooks } from '../common/constants/mocks';
+import { Book } from '../common/types';
 
 export function BookshelfScreen() {
+  const mockBook = getMockBooks() as Book
+
   return (
     <View style={styles.container}>
       <View style={styles.searchContainer}>
@@ -33,19 +38,7 @@ export function BookshelfScreen() {
       <View style={styles.border} />
 
       {/* shelf item */}
-      <View style={styles.shelfItemContainer} id="Shelf Item">
-        <View style={styles.shelfItemContent}>
-          <Text style={styles.shelfItemText}>Title:</Text>
-          <Text style={styles.shelfItemText}>Author:</Text>
-          <Text style={styles.shelfItemText}>Genre:</Text>
-          <Text style={styles.shelfItemText}>Status:</Text>
-        </View>
-        <View style={styles.shelfItemCoverView}>
-          <View style={styles.shelfItemCover}>
-            <Text>Cover</Text>
-          </View>
-        </View>
-      </View>
+      <ShelfItem {...mockBook}/>
 
       {/* Extra items to be deleted */}
       <View style={styles.shelfItemContainer} id="Shelf Item">
