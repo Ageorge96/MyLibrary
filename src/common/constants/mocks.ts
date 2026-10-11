@@ -13,7 +13,7 @@ export function getMockBooks(n: number = 1): Book | Book[] {
     }
   }
   const mockBooks: Book[] = []
-for (let i = 0; i <= n; i++) {
+for (let i = 0; i < n; i++) {
     const mockBook: Book = {
       title: faker.book.title(),
       author: faker.book.author(),

@@ -3,8 +3,7 @@ import { getMockBooks } from '../../constants/mocks';
 import { Book } from '../../types';
 import { styles } from './styles';
 
-export function BookCardAlt() {
-  const mockBook = getMockBooks() as Book; //check inference
+export function BookCardAlt({ title, author, genre, cover = 'Cover' }: Book) {
 
   return (
     <View style={styles.bookCardAlt}>
@@ -14,6 +13,7 @@ export function BookCardAlt() {
             uri: 'https://www.thebookdesigner.com/wp-content/uploads/2024/02/91pSpl1oVVL._SL1500_.jpg',
           }}
           resizeMode="cover"
+          accessibilityLabel={cover}
           style={{
             height: '100%',
             width: '100%',
@@ -23,9 +23,9 @@ export function BookCardAlt() {
         />
       </View>
       <View style={styles.cardContentAlt}>
-        <Text numberOfLines={1}>Title: {mockBook.title}</Text>
-        <Text numberOfLines={1}>Author: {mockBook.author}</Text>
-        <Text>Genre: {mockBook.genre}</Text>
+        <Text numberOfLines={1} style={styles.cardText} >{title}</Text>
+        <Text numberOfLines={1} style={styles.cardText} >By {author}</Text>
+        <Text>Genre: {genre}</Text>
       </View>
     </View>
   );

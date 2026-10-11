@@ -1,10 +1,8 @@
 import { Image, Text, View } from 'react-native';
 import { styles } from './book-card/styles';
-import { getMockBooks } from '../constants/mocks';
 import { Book } from '../types';
 
-export function BookCard() {
-  const mockBook = getMockBooks() as Book; //check inference
+export function BookCard({ title, author, genre, status, cover = 'Cover' }: Book) {
 
   return (
     <View style={styles.bookCard}>
@@ -14,6 +12,7 @@ export function BookCard() {
             uri: 'https://www.thebookdesigner.com/wp-content/uploads/2024/02/91pSpl1oVVL._SL1500_.jpg',
           }}
           resizeMode="cover"
+          accessibilityLabel={cover}
           style={{
             height: '100%',
             width: '100%',
@@ -22,12 +21,16 @@ export function BookCard() {
           }}
         />
       </View>
-          <View style={styles.cardContent}>
-            <Text numberOfLines={1}>Title: {mockBook.title}</Text>
-            <Text numberOfLines={1}>Author: {mockBook.author}</Text>
-            <Text>Genre: {mockBook.genre}</Text>
-            <Text>Status: {mockBook.status}</Text>
-          </View>
+      <View style={styles.cardContent}>
+        <Text numberOfLines={2} style={styles.cardText}>
+          {title}
+        </Text>
+        <Text numberOfLines={1} style={styles.cardText}>
+          By {author}
+        </Text>
+        <Text>Genre: {genre}</Text>
+        <Text>Status: {status}</Text>
+      </View>
     </View>
   );
 }

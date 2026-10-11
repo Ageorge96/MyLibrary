@@ -1,6 +1,5 @@
 import { StyleSheet } from "react-native";
 
-
 export const styles = StyleSheet.create({
   bookCard: {
     height: 125,
@@ -9,13 +8,16 @@ export const styles = StyleSheet.create({
     borderColor: '#b4b4b4',
     borderWidth: 1,
     borderRadius: 24,
-    elevation: 14,
-    flexDirection: 'row'
+    elevation: 8,
+    flexDirection: 'row',
   },
   cardContent: {
     flex: 2,
     padding: 8,
-    justifyContent: 'space-between',
+    justifyContent: 'center',
+  },
+  cardText: {
+    fontWeight: "bold",
   },
   cardCover: {
     flex: 1,
@@ -36,9 +38,7 @@ export const styles = StyleSheet.create({
     elevation: 14,
   },
   cardContentAlt: {
-    flex: 2,
     padding: 8,
-    justifyContent: 'space-between',
   },
   cardCoverAlt: {
     flex: 3,
