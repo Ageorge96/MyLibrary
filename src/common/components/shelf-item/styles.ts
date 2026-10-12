@@ -1,14 +1,11 @@
 import { StyleSheet } from "react-native";
 
-
 export const styles = StyleSheet.create({
   shelfItemContainer: {
-    height: '20%',
+    height: 150,
     width: '100%',
     flexDirection: 'row',
     paddingLeft: 15,
-    borderBottomColor: '#C19A6B',
-    borderBottomWidth: 2,
   },
   shelfItemContent: {
     flex: 3,
@@ -34,7 +31,7 @@ export const styles = StyleSheet.create({
   },
   shelfItemCover: {
     height: '85%',
-    width: '85%',
+    width: '80%',
     // styles to be deleted
     backgroundColor: 'white',
     justifyContent: 'center',

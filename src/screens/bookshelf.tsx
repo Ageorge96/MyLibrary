@@ -1,10 +1,16 @@
-import { ShelfItem } from '@components/shelf-item/shelf-item';
-import { Button, StyleSheet, Text, TextInput, View } from 'react-native';
+import {
+  Button,
+  StyleSheet,
+  Text,
+  TextInput,
+  View,
+} from 'react-native';
 import { getMockBooks } from '../common/constants/mocks';
 import { Book } from '../common/types';
+import { BookshelfList } from '../features/bookshelf-list';
 
 export function BookshelfScreen() {
-  const mockBook = getMockBooks() as Book
+  const mockBooks = getMockBooks(8) as Book[];
 
   return (
     <View style={styles.container}>
@@ -36,50 +42,7 @@ export function BookshelfScreen() {
         </View>
       </View>
       <View style={styles.border} />
-
-      {/* shelf item */}
-      <ShelfItem {...mockBook}/>
-
-      {/* Extra items to be deleted */}
-      <View style={styles.shelfItemContainer} id="Shelf Item">
-        <View style={styles.shelfItemContent}>
-          <Text style={styles.shelfItemText}>Title:</Text>
-          <Text style={styles.shelfItemText}>Author:</Text>
-          <Text style={styles.shelfItemText}>Genre:</Text>
-          <Text style={styles.shelfItemText}>Status:</Text>
-        </View>
-        <View style={styles.shelfItemCoverView}>
-          <View style={styles.shelfItemCover}>
-            <Text>Cover</Text>
-          </View>
-        </View>
-      </View>
-      <View style={styles.shelfItemContainer} id="Shelf Item">
-        <View style={styles.shelfItemContent}>
-          <Text style={styles.shelfItemText}>Title:</Text>
-          <Text style={styles.shelfItemText}>Author:</Text>
-          <Text style={styles.shelfItemText}>Genre:</Text>
-          <Text style={styles.shelfItemText}>Status:</Text>
-        </View>
-        <View style={styles.shelfItemCoverView}>
-          <View style={styles.shelfItemCover}>
-            <Text>Cover</Text>
-          </View>
-        </View>
-      </View>
-      <View style={styles.shelfItemContainer} id="Shelf Item">
-        <View style={styles.shelfItemContent}>
-          <Text style={styles.shelfItemText}>Title:</Text>
-          <Text style={styles.shelfItemText}>Author:</Text>
-          <Text style={styles.shelfItemText}>Genre:</Text>
-          <Text style={styles.shelfItemText}>Status:</Text>
-        </View>
-        <View style={styles.shelfItemCoverView}>
-          <View style={styles.shelfItemCover}>
-            <Text>Cover</Text>
-          </View>
-        </View>
-      </View>
+      <BookshelfList books={mockBooks} />
     </View>
   );
 }
@@ -126,35 +89,5 @@ const styles = StyleSheet.create({
     width: '100%',
     marginTop: 10,
     backgroundColor: '#C19A6B',
-  },
-  shelfItemContainer: {
-    height: '20%',
-    width: '100%',
-    flexDirection: 'row',
-    borderBottomColor: '#C19A6B',
-    borderBottomWidth: 2,
-  },
-  shelfItemContent: {
-    flex: 3,
-    paddingTop: 6,
-    paddingLeft: 8,
-    paddingBottom: 6,
-    justifyContent: 'space-between',
-  },
-  shelfItemText: {
-    fontSize: 18,
-  },
-  shelfItemCoverView: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  shelfItemCover: {
-    height: '80%',
-    width: '80%',
-    // styles to be deleted
-    backgroundColor: 'white',
-    justifyContent: 'center',
-    alignItems: 'center',
   },
 });
