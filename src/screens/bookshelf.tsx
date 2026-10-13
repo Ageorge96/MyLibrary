@@ -8,8 +8,15 @@ import {
 import { getMockBooks } from '../common/constants/mocks';
 import { Book } from '../common/types';
 import { BookshelfList } from '../features/bookshelf-list';
+import { useNavigation } from '@react-navigation/native';
+import { BookshelfStackParamList } from '../navigation/navigation.types';
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
+
+type BookshelfNavigationProp =
+  NativeStackNavigationProp<BookshelfStackParamList, 'Index'>;
 
 export function BookshelfScreen() {
+  const navigation = useNavigation<BookshelfNavigationProp>();
   const mockBooks = getMockBooks(8) as Book[];
 
   return (
@@ -32,7 +39,7 @@ export function BookshelfScreen() {
       {/* filter button shows filter options */}
       <View style={styles.buttonsContainer}>
         <View style={styles.button}>
-          <Button title="Add" />
+          <Button title="Add" onPress={() => navigation.navigate("Add")} />
         </View>
         <View style={styles.button}>
           <Button title="Edit" />
