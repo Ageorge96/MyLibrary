@@ -73,7 +73,7 @@ const styles = StyleSheet.create({
     flex: 10,
     width: '80%',
     marginBottom: 12,
-    borderRadius: 20,
+    borderRadius: 8,
     backgroundColor: '#ffffff',
   },
   filter: {

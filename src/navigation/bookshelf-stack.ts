@@ -12,6 +12,7 @@ export const BookshelfStack = createNativeStackNavigator({
       screen: AddBookScreen,
       options: {
         headerShown: true,
+        title: "Add Book"
       }
     }),
   },

@@ -1,10 +1,6 @@
-import { Text, View } from "react-native";
-
+import { AddBookForm } from "../features/add-book-form";
 
 export function AddBookScreen() {
-  return (
-    <View>
-      <Text>Add book</Text>
-    </View>
-  )
+  return <AddBookForm />
+
 }
