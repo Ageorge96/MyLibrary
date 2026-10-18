@@ -2,7 +2,7 @@ import { JSX, useState } from 'react';
 import { DetailsPage } from './details-page';
 import { Button, View } from 'react-native';
 import { CoverPage } from './cover-page';
-import { useNavigation } from '@react-navigation/native';
+import { useNavigation, useTheme } from '@react-navigation/native';
 import { styles } from './styles';
 
 const addBookPagination = {
@@ -13,6 +13,8 @@ const addBookPagination = {
 type AddBookPages = keyof typeof addBookPagination;
 
 export function AddBookForm() {
+  const { colors } = useTheme();
+  const themedStyles = styles({colors})
   const navigation = useNavigation();
   const [page, setPage] = useState<AddBookPages>('details');
 
@@ -20,14 +22,14 @@ export function AddBookForm() {
     <>
       {addBookPagination[page]}
       <View
-        style={styles.navigationContainer}
+        style={themedStyles.navigationContainer}
       >
         {page === 'cover' ? (
-          <View style={styles.navButtonView}>
+          <View style={themedStyles.navButtonView}>
             <Button title="Back" onPress={() => setPage('details')} />
           </View>
         ) : null}
-        <View style={styles.navButtonView}>
+        <View style={themedStyles.navButtonView}>
           <Button
             title="Continue"
             onPress={() => {

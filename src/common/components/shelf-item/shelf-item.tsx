@@ -1,31 +1,20 @@
-import { Image, Text, View } from 'react-native';
+import { Text, View } from 'react-native';
 import { styles } from './styles';
 import { Book } from '../../types';
+import { Cover } from '../cover';
 
 export function ShelfItem({
   title,
   author,
   genre,
   status,
-  cover = 'Cover',
+  cover = 'https://www.thebookdesigner.com/wp-content/uploads/2024/02/91pSpl1oVVL._SL1500_.jpg',
 }: Book) {
   return (
     <View style={styles.shelfItemContainer} id="Shelf Item">
       <View style={styles.shelfItemCoverView}>
         <View style={styles.shelfItemCover}>
-          <Image
-          source={{
-            uri: 'https://www.thebookdesigner.com/wp-content/uploads/2024/02/91pSpl1oVVL._SL1500_.jpg',
-          }}
-          accessibilityLabel={cover}
-          resizeMode="cover"
-          style={{
-            height: '100%',
-            width: '100%',
-            position: 'absolute',
-            bottom: 0,
-          }}
-        />
+          <Cover src={cover} title={title} />
         </View>
       </View>
       <View style={styles.shelfItemContent}>
