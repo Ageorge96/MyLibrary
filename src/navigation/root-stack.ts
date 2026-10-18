@@ -10,13 +10,13 @@ export const RootStack = createBottomTabNavigator({
     Wishlist: HomeScreen,
     Settings: HomeScreen,
   },
-  screenOptions: {
-    sceneStyle: { backgroundColor: '#f6eee3' },
+  screenOptions: ({ theme }) => ({
+    sceneStyle: { backgroundColor: theme.colors.background },
     tabBarStyle: {
-      backgroundColor: '#C19A6B',
+      backgroundColor: theme.colors.primary,
     },
     tabBarLabelStyle: { fontWeight: 'bold', color: 'black' },
     tabBarIconStyle: { color: 'black' },
     headerShown: false,
-  },
+  }),
 });

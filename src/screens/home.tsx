@@ -32,8 +32,8 @@ const styles = StyleSheet.create({
   },
   carousalView: {
     height: '30%',
-    backgroundColor: 'gray',
     // styles to delete
+    backgroundColor: 'gray',
     justifyContent: 'center',
     alignItems: 'center',
   },

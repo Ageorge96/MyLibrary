@@ -1,12 +1,15 @@
 import { Image, Text, View } from 'react-native';
-import { styles } from './book-card/styles';
-import { Book } from '../types';
+import { styles } from './styles';
+import { Book } from '../../types';
+import { useTheme } from '@react-navigation/native';
 
 export function BookCard({ title, author, genre, status, cover = 'Cover' }: Book) {
+  const { colors } = useTheme();
+  const themedStyles = styles({colors})
 
   return (
-    <View style={styles.bookCard}>
-      <View style={styles.cardCover}>
+    <View style={themedStyles.bookCard}>
+      <View style={themedStyles.cardCover}>
         <Image
           source={{
             uri: 'https://www.thebookdesigner.com/wp-content/uploads/2024/02/91pSpl1oVVL._SL1500_.jpg',
@@ -21,11 +24,11 @@ export function BookCard({ title, author, genre, status, cover = 'Cover' }: Book
           }}
         />
       </View>
-      <View style={styles.cardContent}>
-        <Text numberOfLines={2} style={styles.cardText}>
+      <View style={themedStyles.cardContent}>
+        <Text numberOfLines={2} style={themedStyles.cardText}>
           {title}
         </Text>
-        <Text numberOfLines={1} style={styles.cardText}>
+        <Text numberOfLines={1} style={themedStyles.cardText}>
           By {author}
         </Text>
         <Text>Genre: {genre}</Text>

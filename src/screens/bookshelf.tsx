@@ -8,22 +8,26 @@ import {
 import { getMockBooks } from '../common/constants/mocks';
 import { Book } from '../common/types';
 import { BookshelfList } from '../features/bookshelf-list';
-import { useNavigation } from '@react-navigation/native';
+import { useNavigation, useTheme } from '@react-navigation/native';
 import { BookshelfStackParamList } from '../navigation/navigation.types';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
+import { AppColors } from '../common/themes';
 
 type BookshelfNavigationProp =
   NativeStackNavigationProp<BookshelfStackParamList, 'Index'>;
 
+  // separate component into a feature and leave this as only the screen containing the feature component
 export function BookshelfScreen() {
   const navigation = useNavigation<BookshelfNavigationProp>();
   const mockBooks = getMockBooks(8) as Book[];
+  const { colors } = useTheme()
+  const themedStyles = styles({colors})
 
   return (
-    <View style={styles.container}>
-      <View style={styles.searchContainer}>
-        <TextInput style={styles.input} />
-        <View style={styles.filter}>
+    <View style={themedStyles.container}>
+      <View style={themedStyles.searchContainer}>
+        <TextInput style={themedStyles.input} />
+        <View style={themedStyles.filter}>
           {/* To be converted to button */}
           <Text
             style={{
@@ -37,24 +41,24 @@ export function BookshelfScreen() {
         </View>
       </View>
       {/* filter button shows filter options */}
-      <View style={styles.buttonsContainer}>
-        <View style={styles.button}>
+      <View style={themedStyles.buttonsContainer}>
+        <View style={themedStyles.button}>
           <Button title="Add" onPress={() => navigation.navigate("Add")} />
         </View>
-        <View style={styles.button}>
+        <View style={themedStyles.button}>
           <Button title="Edit" />
         </View>
-        <View style={styles.button}>
+        <View style={themedStyles.button}>
           <Button title="Remove" />
         </View>
       </View>
-      <View style={styles.border} />
+      <View style={themedStyles.border} />
       <BookshelfList books={mockBooks} />
     </View>
   );
 }
 
-const styles = StyleSheet.create({
+const styles = ({colors}: AppColors) => StyleSheet.create({
   container: {
     flex: 1,
     paddingTop: 10,
@@ -95,6 +99,6 @@ const styles = StyleSheet.create({
     height: 4,
     width: '100%',
     marginTop: 10,
-    backgroundColor: '#C19A6B',
+    backgroundColor: colors.primary,
   },
 });

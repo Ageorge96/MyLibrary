@@ -3,21 +3,25 @@ import { FlatList, View } from 'react-native';
 import { Book } from '../../common/types';
 import { styles } from './styles';
 import { useBottomTabBarHeight } from '@react-navigation/bottom-tabs';
+import { useTheme } from '@react-navigation/native';
 
 interface BookshelfListProps {
   books: Book[]
 }
 
 export function BookshelfList({books}: BookshelfListProps) {
+  const { colors } = useTheme();
+  const themedStyles = styles({colors})
   const tabBarHeight = useBottomTabBarHeight();
+  
   return (
-    <View style={styles.container}>
+    <View style={themedStyles.container}>
       <FlatList
         data={books}
         renderItem={item => <ShelfItem {...item.item} />}
         ItemSeparatorComponent={
           <View
-            style={styles.itemSeparator}
+            style={themedStyles.itemSeparator}
           />
         }
         contentContainerStyle={{ paddingBottom: tabBarHeight + 24}}

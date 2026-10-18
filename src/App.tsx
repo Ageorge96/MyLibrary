@@ -1,6 +1,7 @@
 import { StatusBar, StyleSheet, useColorScheme } from 'react-native';
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 import { Navigator } from './navigation/navigator';
+import { DefaultTheme } from './common/themes';
 
 function App() {
   const isDarkMode = useColorScheme() === 'dark';
@@ -16,7 +17,7 @@ function App() {
 function AppContent() {
   return (
     <SafeAreaView style={styles.container}>
-      <Navigator />
+      <Navigator theme={DefaultTheme} />
     </SafeAreaView>
   );
 }

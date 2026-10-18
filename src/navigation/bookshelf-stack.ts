@@ -18,6 +18,5 @@ export const BookshelfStack = createNativeStackNavigator({
   },
   screenOptions: {
     headerShown: false,
-    contentStyle: { backgroundColor: '#f6eee3' },
   },
 })

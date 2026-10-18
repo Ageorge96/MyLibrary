@@ -1,11 +1,12 @@
+import { AppColors } from "@common/themes";
 import { StyleSheet } from "react-native";
 
-export const styles = StyleSheet.create({
+export const styles = ({colors}: AppColors) => StyleSheet.create({
   bookCard: {
     height: 125,
     width: 250,
-    backgroundColor: '#e5decf',
-    borderColor: '#b4b4b4',
+    backgroundColor: colors.background,
+    borderColor: colors.border,
     borderWidth: 1,
     borderRadius: 24,
     elevation: 8,
@@ -26,13 +27,12 @@ export const styles = StyleSheet.create({
     overflow: 'hidden',
     borderTopLeftRadius: 24,
     borderBottomLeftRadius: 24,
-    backgroundColor: '#B77B6E' //#959889 olive
   },
   bookCardAlt: {
     height: 200,
     width: '40%',
-    backgroundColor: '#e5decf',
-    borderColor: '#b4b4b4',
+    backgroundColor: colors.background,
+    borderColor: colors.border,
     borderWidth: 1,
     borderRadius: 24,
     elevation: 14,
@@ -47,6 +47,5 @@ export const styles = StyleSheet.create({
     overflow: 'hidden',
     borderTopRightRadius: 24,
     borderTopLeftRadius: 24,
-    backgroundColor: '#B77B6E'
   },
 })

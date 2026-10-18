@@ -1,4 +1,4 @@
-import { BookCard } from '@components/book-card';
+import { BookCard } from '@components/book-card/book-card';
 import { FlatList, Text, View } from 'react-native';
 import { styles } from './styles';
 import { Book } from '../../common/types';

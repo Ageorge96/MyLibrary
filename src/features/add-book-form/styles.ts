@@ -1,6 +1,7 @@
 import { StyleSheet } from 'react-native';
+import { AppColors } from '../../common/themes';
 
-export const styles = StyleSheet.create({
+export const styles = ({colors}: AppColors) => StyleSheet.create({
   container: {
     flex: 1,
     padding: 8,
@@ -9,10 +10,8 @@ export const styles = StyleSheet.create({
   },
   inputContainer: {
     width: '90%',
-    // flex: 1,
   },
   input: {
-    // flex: 2,
     height: 50,
     width: '100%',
     paddingHorizontal: 6,
@@ -20,7 +19,7 @@ export const styles = StyleSheet.create({
     marginBottom: 12,
     borderRadius: 5,
     borderWidth: 2,
-    borderColor: '#C19A6B',
+    borderColor: colors.border,
     fontSize: 24,
   },
   inputLabel: {
@@ -29,7 +28,7 @@ export const styles = StyleSheet.create({
   },
   dropDownContainer: {
     borderWidth: 2,
-    borderColor: '#C19A6B',
+    borderColor: colors.border,
   },
   dropDownText:{
     fontSize: 24,
@@ -48,8 +47,8 @@ export const styles = StyleSheet.create({
   coverView: {
     height: '80%',
     width: '75%',
-    backgroundColor: 'white',
     // To be deleted
+    backgroundColor: 'white',
     alignItems: 'center',
     justifyContent: 'center',
   },
