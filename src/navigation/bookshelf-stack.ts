@@ -2,8 +2,8 @@ import { createNativeStackNavigator, createNativeStackScreen } from "@react-navi
 import { BookshelfScreen } from "../screens/bookshelf";
 import { AddBookScreen } from "../screens/add-book";
 
-
 export const BookshelfStack = createNativeStackNavigator({
+  initialRouteName: "Index",
   screens: {
     Index: createNativeStackScreen({
       screen: BookshelfScreen

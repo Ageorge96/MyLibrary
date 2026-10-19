@@ -10,4 +10,5 @@ export type RootStackParamList = {
 export type BookshelfStackParamList = {
   Index: undefined;
   Add: undefined;
+  Search: undefined;
 }

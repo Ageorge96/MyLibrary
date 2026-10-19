@@ -3,7 +3,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { BookshelfStack } from './bookshelf-stack';
 
 export const RootStack = createBottomTabNavigator({
-  initialRouteName: 'Home',
+  initialRouteName: 'Bookshelf',
   screens: {
     Home: { screen: HomeScreen },
     Bookshelf: { screen: BookshelfStack },

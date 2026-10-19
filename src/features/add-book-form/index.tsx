@@ -4,6 +4,8 @@ import { Button, View } from 'react-native';
 import { CoverPage } from './cover-page';
 import { useNavigation, useTheme } from '@react-navigation/native';
 import { styles } from './styles';
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
+import { BookshelfStackParamList } from '../../navigation/navigation.types';
 
 const addBookPagination = {
   details: <DetailsPage />,
@@ -12,10 +14,13 @@ const addBookPagination = {
 
 type AddBookPages = keyof typeof addBookPagination;
 
+type BookshelfNavigationProp =
+  NativeStackNavigationProp<BookshelfStackParamList, 'Add'>;
+
 export function AddBookForm() {
   const { colors } = useTheme();
   const themedStyles = styles({colors})
-  const navigation = useNavigation();
+  const navigation = useNavigation<BookshelfNavigationProp>();
   const [page, setPage] = useState<AddBookPages>('details');
 
   return (

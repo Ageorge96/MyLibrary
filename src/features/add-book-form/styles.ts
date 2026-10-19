@@ -4,9 +4,8 @@ import { AppColors } from '../../common/themes';
 export const styles = ({colors}: AppColors) => StyleSheet.create({
   container: {
     flex: 1,
-    padding: 8,
     alignItems: 'center',
-    justifyContent: 'space-evenly',
+    justifyContent: 'space-around',
   },
   inputContainer: {
     width: '90%',
