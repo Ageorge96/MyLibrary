@@ -6,7 +6,7 @@ export type AppColors = Theme['colors'] & {
     contrastText: string;
   }
 
-type AppTheme = Omit<Theme, 'colors'> & {
+export type AppTheme = Omit<Theme, 'colors'> & {
   colors: AppColors;
 }
 
