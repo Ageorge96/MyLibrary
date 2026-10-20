@@ -12,7 +12,7 @@ export function BookCard({
   cover, // 'https://www.thebookdesigner.com/wp-content/uploads/2024/02/91pSpl1oVVL._SL1500_.jpg'
 }: Book) {
   const { colors } = useTheme();
-  const themedStyles = styles({ colors });
+  const themedStyles = styles(colors);
 
   return (
     <View style={themedStyles.bookCard}>
@@ -20,14 +20,14 @@ export function BookCard({
         <Cover src={cover} title={title} />
       </View>
       <View style={themedStyles.cardContent}>
-        <Text numberOfLines={2} style={themedStyles.cardText}>
+        <Text numberOfLines={2} style={themedStyles.cardHeader}>
           {title}
         </Text>
-        <Text numberOfLines={1} style={themedStyles.cardText}>
+        <Text numberOfLines={1} style={themedStyles.cardHeader}>
           By {author}
         </Text>
-        <Text>Genre: {genre}</Text>
-        <Text>Status: {status}</Text>
+        <Text style={themedStyles.cardText} >Genre: {genre}</Text>
+        <Text style={themedStyles.cardText} >Status: {status}</Text>
       </View>
     </View>
   );

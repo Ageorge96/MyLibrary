@@ -1,6 +1,7 @@
+import { AppColors } from "@common/themes";
 import { StyleSheet } from "react-native";
 
-export const styles = StyleSheet.create({
+export const styles= (colors: AppColors) => StyleSheet.create({
   shelfItemContainer: {
     height: 150,
     width: '100%',
@@ -15,14 +16,17 @@ export const styles = StyleSheet.create({
   },
   shelfItemTitle: {
     fontSize: 24,
-    fontWeight: 'bold'
+    fontWeight: 'bold',
+    color: colors.text,
   },
   shelfItemAuthor: {
     fontSize: 18,
     fontWeight: 'bold',
+    color: colors.text,
   },
   shelfItemText: {
     fontSize: 18,
+    color: colors.text,
   },
   shelfItemCoverView: {
     flex: 1,

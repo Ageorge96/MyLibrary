@@ -15,8 +15,8 @@ export const RootStack = createBottomTabNavigator({
     tabBarStyle: {
       backgroundColor: theme.colors.primary,
     },
-    tabBarLabelStyle: { fontWeight: 'bold', color: 'black' },
-    tabBarIconStyle: { color: 'black' },
+    tabBarLabelStyle: { fontSize: 18, fontWeight: 'bold', color: theme.colors.contrastText },
+    tabBarIconStyle: { color: theme.colors.contrastText },
     headerShown: false,
   }),
 });

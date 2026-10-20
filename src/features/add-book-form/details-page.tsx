@@ -6,17 +6,16 @@ import { useTheme } from '@react-navigation/native';
 import { styles } from './styles';
 
 const genreOptions = Object.values(GENRE).map(value => {
-  return { label: value, value: value};
+  return { label: value, value: value };
 });
 
 const statusOptions = Object.values(STATUS).map(value => {
   return { label: value, value: value };
 });
 
-
 export function DetailsPage() {
   const { colors } = useTheme();
-  const themedStyles = styles({colors})
+  const themedStyles = styles(colors);
 
   const [genre, setGenre] = useState<GENRE[]>([]);
   const [status, setStatus] = useState<STATUS>();
@@ -66,7 +65,11 @@ export function DetailsPage() {
       </View>
       <View style={themedStyles.inputContainer}>
         <Text style={themedStyles.inputLabel}>Bookmark</Text>
-        <TextInput style={themedStyles.input} inputMode="numeric" keyboardType="numeric"  />
+        <TextInput
+          style={themedStyles.input}
+          inputMode="numeric"
+          keyboardType="numeric"
+        />
       </View>
     </View>
   );

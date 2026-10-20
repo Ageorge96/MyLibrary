@@ -6,7 +6,7 @@ import { useTheme } from '@react-navigation/native';
 
 export function AddBookScreen() {
   const [searchMode, setSearchMode] = useState(false);
-  const {colors} = useTheme();
+  const { colors } = useTheme();
 
   const toggleSwitch = () => {
     setSearchMode(previousState => !previousState);
@@ -23,7 +23,7 @@ export function AddBookScreen() {
       >
         <Text>{`Switch to ${searchMode ? 'form' : 'search'}`}</Text>
         <Switch
-          trackColor={{ false: '#767577', true: '#81b0ff' }} // change to secondary once available
+          trackColor={{ false: '#767577', true: colors.secondary }}
           thumbColor={searchMode ? colors.primary : '#f4f3f4'}
           onValueChange={toggleSwitch}
           value={searchMode}

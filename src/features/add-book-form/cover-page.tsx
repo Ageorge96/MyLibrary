@@ -4,11 +4,11 @@ import { styles } from './styles';
 
 export function CoverPage() {
   const { colors } = useTheme();
-  const themedStyles = styles({colors})
-  
+  const themedStyles = styles(colors);
+
   return (
     <View style={themedStyles.container}>
-      <View style={themedStyles.coverView} >
+      <View style={themedStyles.coverView}>
         <Text>Cover</Text>
       </View>
       <View style={themedStyles.inputContainer}>
