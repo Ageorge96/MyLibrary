@@ -19,7 +19,7 @@ export const styles = (colors: AppColors) =>
       marginBottom: 12,
       borderRadius: 5,
       borderWidth: 2,
-      borderColor: colors.border,
+      borderColor: colors.secondary,
       fontSize: 24,
     },
     inputLabel: {
@@ -28,7 +28,7 @@ export const styles = (colors: AppColors) =>
     },
     dropDownContainer: {
       borderWidth: 2,
-      borderColor: colors.border,
+      borderColor: colors.secondary,
     },
     dropDownText: {
       fontSize: 24,
@@ -43,6 +43,7 @@ export const styles = (colors: AppColors) =>
     },
     navButtonView: {
       flex: 1,
+      alignItems: 'center'
     },
     coverView: {
       height: '80%',

@@ -1,4 +1,4 @@
-import { Button, StyleSheet, Text, TextInput, View } from 'react-native';
+import { StyleSheet, Text, TextInput, View } from 'react-native';
 import { getMockBooks } from '../common/constants/mocks';
 import { Book } from '../common/types';
 import { BookshelfList } from '../features/bookshelf-list';
@@ -6,6 +6,7 @@ import { useNavigation, useTheme } from '@react-navigation/native';
 import { BookshelfStackParamList } from '../navigation/navigation.types';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { AppColors } from '../common/themes';
+import { Button } from '@components/button';
 
 type BookshelfNavigationProp = NativeStackNavigationProp<
   BookshelfStackParamList,
@@ -21,34 +22,30 @@ export function BookshelfScreen() {
 
   return (
     <View style={themedStyles.container}>
-      <View style={themedStyles.searchContainer}>
-        <TextInput style={themedStyles.input} />
-        <View style={themedStyles.filter}>
-          {/* To be converted to button */}
-          <Text
-            style={{
-              color: 'white',
-              justifyContent: 'center',
-              alignItems: 'center',
-            }}
-          >
-            Filter
-          </Text>
+      <View style={themedStyles.headerContainer}>
+        <View style={themedStyles.searchContainer}>
+          <TextInput style={themedStyles.input} />
+          <View style={themedStyles.filter}>
+            {/* To be converted to button */}
+            <Text
+              style={{
+                color: 'white',
+                justifyContent: 'center',
+                alignItems: 'center',
+              }}
+            >
+              Filter
+            </Text>
+          </View>
         </View>
-      </View>
-      {/* filter button shows filter options */}
-      <View style={themedStyles.buttonsContainer}>
-        <View style={themedStyles.button}>
-          <Button title="Add"  onPress={() => navigation.navigate("Add")} />
-        </View>
-        <View style={themedStyles.button}>
+        {/* filter button shows filter options */}
+        <View style={themedStyles.buttonsContainer}>
+          <Button title="Add" onPress={() => navigation.navigate('Add')} />
           <Button title="Edit" />
-        </View>
-        <View style={themedStyles.button}>
           <Button title="Remove" />
         </View>
+        <View style={themedStyles.border} />
       </View>
-      <View style={themedStyles.border} />
       <BookshelfList books={mockBooks} />
     </View>
   );
@@ -61,15 +58,17 @@ const styles = (colors: AppColors) =>
       justifyContent: 'flex-start',
       alignItems: 'center',
     },
+    headerContainer: {
+      backgroundColor: colors.secondary,
+    },
     searchContainer: {
       width: '100%',
       paddingTop: 10,
-      paddingHorizontal: 10,
+      paddingHorizontal: 12,
       flexDirection: 'row',
       gap: 10,
       justifyContent: 'space-between',
       alignItems: 'flex-start',
-      backgroundColor: colors.primary,
     },
     input: {
       flex: 10,
@@ -83,24 +82,17 @@ const styles = (colors: AppColors) =>
       height: 40,
       width: 30,
       // to be deleted
-      backgroundColor: 'black',
+      backgroundColor: colors.primary,
     },
     buttonsContainer: {
       paddingBottom: 10,
-      paddingHorizontal: 8,
+      paddingHorizontal: 12,
       flexDirection: 'row',
       justifyContent: 'space-between',
-      gap: 16,
-      backgroundColor: colors.primary,
-    },
-    button: {
-      flex: 1,
-      backgroundColor: colors.secondary,
-      borderRadius: 23,
     },
     border: {
       height: 4,
       width: '100%',
-      backgroundColor: colors.border,
+      backgroundColor: colors.secondary,
     },
   });

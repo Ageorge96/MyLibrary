@@ -1,11 +1,12 @@
-import { Button, Text, TextInput, View } from 'react-native';
+import { Text, TextInput, View } from 'react-native';
 import { styles } from './styles';
 import { useNavigation, useTheme } from '@react-navigation/native';
+import { Button } from '@components/button';
 
 export function AddBookSearch() {
   const { colors } = useTheme();
   const navigation = useNavigation();
-  const themedStyles = styles({ colors });
+  const themedStyles = styles(colors);
 
   return (
     <View style={themedStyles.container}>

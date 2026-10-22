@@ -20,7 +20,7 @@ export const styles = (colors: AppColors) =>
       marginBottom: 12,
       borderRadius: 5,
       borderWidth: 2,
-      borderColor: colors.border,
+      borderColor: colors.secondary,
       fontSize: 24,
     },
     inputLabel: {

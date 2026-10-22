@@ -9,6 +9,6 @@ export const styles = (colors: AppColors) =>
     itemSeparator: {
       height: 2,
       width: '100%',
-      backgroundColor: colors.border,
+      backgroundColor: colors.secondary,
     },
   });

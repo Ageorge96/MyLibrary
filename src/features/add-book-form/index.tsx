@@ -1,11 +1,12 @@
 import { JSX, useState } from 'react';
 import { DetailsPage } from './details-page';
-import { Button, View } from 'react-native';
+import { View } from 'react-native';
 import { CoverPage } from './cover-page';
 import { useNavigation, useTheme } from '@react-navigation/native';
 import { styles } from './styles';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { BookshelfStackParamList } from '../../navigation/navigation.types';
+import { Button } from '@components/button';
 
 const addBookPagination = {
   details: <DetailsPage />,
