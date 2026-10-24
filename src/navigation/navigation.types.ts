@@ -7,6 +7,8 @@ export type RootStackParamList = {
   Settings: undefined;
 }
 
+export type RootStackNames = keyof RootStackParamList;
+
 export type BookshelfStackParamList = {
   Index: undefined;
   Add: undefined;

@@ -14,7 +14,7 @@ export function HomeScreen() {
       <View style={styles.carousalView} >
         <Text style={{fontSize: 32}} >Carousal Placeholder</Text>
       </View>
-      <HomeSection title={"My Bookmark"} books={mockBookmarks} />
+      <HomeSection title="My Bookmark" books={mockBookmarks} />
       <HomeSection title="My Wishlist" books={mockBookmarks} alt />
     </View>
   );

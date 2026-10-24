@@ -40,9 +40,9 @@ export function BookshelfScreen() {
         </View>
         {/* filter button shows filter options */}
         <View style={themedStyles.buttonsContainer}>
-          <Button title="Add" onPress={() => navigation.navigate('Add')} />
-          <Button title="Edit" />
-          <Button title="Remove" />
+          <Button title="Add" onPress={() => navigation.navigate('Add')} icon="circle-plus" />
+          <Button title="Edit" icon="square-pen" />
+          <Button title="Remove" icon="circle-x" />
         </View>
         <View style={themedStyles.border} />
       </View>
