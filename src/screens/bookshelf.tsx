@@ -1,4 +1,4 @@
-import { StyleSheet, Text, TextInput, View } from 'react-native';
+import { StyleSheet, TextInput, View } from 'react-native';
 import { getMockBooks } from '../common/constants/mocks';
 import { Book } from '../common/types';
 import { BookshelfList } from '../features/bookshelf-list';
@@ -6,7 +6,6 @@ import { useNavigation, useTheme } from '@react-navigation/native';
 import { BookshelfStackParamList } from '../navigation/navigation.types';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { AppColors } from '../common/themes';
-import { Button } from '@components/button';
 import { IconButton } from '@common/components/icon-button';
 
 type BookshelfNavigationProp = NativeStackNavigationProp<
@@ -23,19 +22,12 @@ export function BookshelfScreen() {
 
   return (
     <View style={themedStyles.container}>
-      <View style={themedStyles.headerContainer}>
         <View style={themedStyles.searchContainer}>
           <TextInput style={themedStyles.input} />
           {/* filter button shows filter options */}
           <IconButton icon="funnel" />
         </View>
-        <View style={themedStyles.buttonsContainer}>
-          <Button title="Add" onPress={() => navigation.navigate('Add')} icon="circle-plus" />
-          <Button title="Edit" icon="square-pen" />
-          <Button title="Remove" icon="circle-x" />
-        </View>
         <View style={themedStyles.border} />
-      </View>
       <BookshelfList books={mockBooks} />
       <View style={{position: 'absolute', right: 24, bottom: 24}} >
         <IconButton icon="plus" onPress={() => navigation.navigate('Add')} />
@@ -50,9 +42,6 @@ const styles = (colors: AppColors) =>
       flex: 1,
       justifyContent: 'flex-start',
       alignItems: 'center',
-    },
-    headerContainer: {
-      backgroundColor: colors.secondary,
     },
     searchContainer: {
       width: '100%',
