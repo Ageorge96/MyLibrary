@@ -5,7 +5,9 @@
     "paths": {
       "@common/*": ["./src/common/*"],
       "@components/*": ["./src/common/components/*"]
-    }
+    },
+    "strict": true,
+    "moduleResolution": "bundler"
   },
   "include": ["**/*.ts", "**/*.tsx"],
   "exclude": ["**/node_modules", "**/Pods"]
