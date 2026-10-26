@@ -7,6 +7,7 @@ import { BookshelfStackParamList } from '../navigation/navigation.types';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { AppColors } from '../common/themes';
 import { Button } from '@components/button';
+import { IconButton } from '@common/components/icon-button';
 
 type BookshelfNavigationProp = NativeStackNavigationProp<
   BookshelfStackParamList,
@@ -25,20 +26,9 @@ export function BookshelfScreen() {
       <View style={themedStyles.headerContainer}>
         <View style={themedStyles.searchContainer}>
           <TextInput style={themedStyles.input} />
-          <View style={themedStyles.filter}>
-            {/* To be converted to button */}
-            <Text
-              style={{
-                color: 'white',
-                justifyContent: 'center',
-                alignItems: 'center',
-              }}
-            >
-              Filter
-            </Text>
-          </View>
+          {/* filter button shows filter options */}
+          <IconButton icon="funnel" />
         </View>
-        {/* filter button shows filter options */}
         <View style={themedStyles.buttonsContainer}>
           <Button title="Add" onPress={() => navigation.navigate('Add')} icon="circle-plus" />
           <Button title="Edit" icon="square-pen" />
@@ -47,6 +37,9 @@ export function BookshelfScreen() {
         <View style={themedStyles.border} />
       </View>
       <BookshelfList books={mockBooks} />
+      <View style={{position: 'absolute', right: 24, bottom: 24}} >
+        <IconButton icon="plus" onPress={() => navigation.navigate('Add')} />
+      </View>
     </View>
   );
 }
@@ -71,18 +64,12 @@ const styles = (colors: AppColors) =>
       alignItems: 'flex-start',
     },
     input: {
-      flex: 10,
-      width: '80%',
+      height: 50,
+      width: '85%',
       marginBottom: 12,
       borderRadius: 8,
       backgroundColor: colors.input,
-    },
-    filter: {
-      flex: 1,
-      height: 40,
-      width: 30,
-      // to be deleted
-      backgroundColor: colors.primary,
+      fontSize: 24,
     },
     buttonsContainer: {
       paddingBottom: 10,

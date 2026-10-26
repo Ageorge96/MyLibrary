@@ -4,7 +4,8 @@ import { IconProps } from "./icons.types";
 
 export const iconSize = {
   s: 18,
-  m: 24
+  m: 24,
+  l: 36,
 }
 
 export function Icon({name, size}: IconProps) {
