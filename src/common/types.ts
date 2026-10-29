@@ -5,6 +5,8 @@ export interface Book {
   status: Status;
   bookmark?: number;
   cover?: string; 
-}
+};
 
-export type Status = 'Ready to Start' | 'Finished' | 'In progress' | 'Next'
+export type Status = 'Ready to Start' | 'Finished' | 'In progress' | 'Next';
+
+export type LibraryCategory = 'bookshelf' | 'wishlist';
