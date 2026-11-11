@@ -1,20 +1,29 @@
-import { Text, TextInput, View } from 'react-native';
+import { View } from 'react-native';
 import { useTheme } from '@react-navigation/native';
 import { styles } from './styles';
+import { Controller } from 'react-hook-form';
+import { FormPageProps } from '.';
+import { InputField } from '@common/components/input-field';
+import { Cover } from '@common/components/cover';
 
-export function CoverPage() {
+export function CoverFormPage({ control }: FormPageProps) {
   const { colors } = useTheme();
   const themedStyles = styles(colors);
 
   return (
     <View style={themedStyles.container}>
-      <View style={themedStyles.coverView}>
-        <Text>Cover</Text>
-      </View>
-      <View style={themedStyles.inputContainer}>
-        <Text style={themedStyles.inputLabel}>Cover</Text>
-        <TextInput style={themedStyles.input} />
-      </View>
+      <Controller
+        control={control}
+        name="cover"
+        render={({ field: { onChange, value } }) => (
+          <>
+            <View style={themedStyles.coverView}>
+              <Cover src={value} />
+            </View>
+            <InputField label="Cover" onChangeText={onChange} />
+          </>
+        )}
+      />
     </View>
   );
 }
