@@ -5,8 +5,8 @@ import { useTheme } from '@react-navigation/native';
 import { styles } from './styles';
 import { InputField } from '@components/input-field';
 import { Controller } from 'react-hook-form';
-import { FormPageProps } from '.';
 import { DropDown } from '@components/drop-downs'
+import { FormPageProps } from './types';
 
 const genreOptions = Object.values(GENRE).map(value => {
   return { label: value, value: value };

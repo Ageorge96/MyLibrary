@@ -16,7 +16,7 @@ export function HomeScreen() {
         <Text style={{fontSize: 12}} >{'<To be implemented after real data is added>'}</Text>
       </View>
       <HomeSection title="My Bookmark" books={mockBookmarks} />
-      <HomeSection title="My Wishlist" books={mockBookmarks} alt />
+      <HomeSection title="My Wishlist" books={mockBookmarks} />
     </View>
   );
 }

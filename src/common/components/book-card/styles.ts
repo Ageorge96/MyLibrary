@@ -30,22 +30,4 @@ export const styles = (colors: AppColors) => StyleSheet.create({
     borderTopLeftRadius: 21,
     borderBottomLeftRadius: 21,
   },
-  bookCardAlt: {
-    height: 200,
-    width: '40%',
-    backgroundColor: colors.primary,
-    borderRadius: 24,
-    elevation: 14,
-  },
-  cardContentAlt: {
-    padding: 8,
-  },
-  cardCoverAlt: {
-    flex: 3,
-    justifyContent: 'center',
-    alignItems: 'center',
-    overflow: 'hidden',
-    borderTopRightRadius: 24,
-    borderTopLeftRadius: 24,
-  },
 })
