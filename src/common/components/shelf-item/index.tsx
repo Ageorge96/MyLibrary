@@ -1,16 +1,15 @@
 import { Text, View } from 'react-native';
 import { styles } from './styles';
-import { Book } from '../../types';
 import { Cover } from '../cover';
 import { useTheme } from '@react-navigation/native';
+import { ShelfBook } from '@classes/shelf-book';
 
-export function ShelfItem({
-  title,
-  author,
-  genre,
-  status,
-  cover = 'https://www.thebookdesigner.com/wp-content/uploads/2024/02/91pSpl1oVVL._SL1500_.jpg',
-}: Book) {
+interface ShelfItemProps {
+  book: ShelfBook
+}
+
+export function ShelfItem({ book }: ShelfItemProps) {
+  const { title, author, genre, status, cover } = book.itemDetails;
   const { colors } = useTheme();
   const themedStyles = styles(colors);
 

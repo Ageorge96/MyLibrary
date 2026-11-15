@@ -8,7 +8,8 @@
     "lint": "eslint .",
     "start": "react-native start",
     "log": "react-native log-android",
-    "test": "jest"
+    "test": "jest",
+    "reset": "yarn cache clean; watchman watch-del-all; rm -rf ./android/build; rm -rf ./android/.gradle; rm -rf ./android/app/build; cd android; ./gradlew clean; ./gradlew assembleDebug; cd ..; yarn android dev --reset-cache"
   },
   "dependencies": {
     "@react-native-vector-icons/lucide": "^14.0.0",

@@ -4,11 +4,12 @@
     "types": ["vitest"],
     "paths": {
       "@common/*": ["./src/common/*"],
-      "@components/*": ["./src/common/components/*"]
+      "@components/*": ["./src/common/components/*"],
+      "@classes/*": ["./src/core/classes/*"]
     },
     "strict": true,
     "moduleResolution": "bundler"
   },
   "include": ["**/*.ts", "**/*.tsx"],
-  "exclude": ["**/node_modules", "**/Pods"]
+  "exclude": ["**/node_modules", "**/Pods", "**/*.pseudo.md"]
 }

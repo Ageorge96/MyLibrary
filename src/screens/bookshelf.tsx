@@ -1,12 +1,12 @@
 import { StyleSheet, TextInput, View } from 'react-native';
-import { getMockBooks } from '../common/constants/mocks';
-import { Book } from '../common/types';
+import { getMockShelfBooks } from '../common/constants/mocks';
 import { BookshelfList } from '../features/bookshelf-list';
 import { useNavigation, useTheme } from '@react-navigation/native';
 import { BookshelfStackParamList } from '../navigation/navigation.types';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { AppColors } from '../common/themes';
 import { IconButton } from '@common/components/icon-button';
+import { ShelfBook } from '@classes/shelf-book';
 
 type BookshelfNavigationProp = NativeStackNavigationProp<
   BookshelfStackParamList,
@@ -16,7 +16,7 @@ type BookshelfNavigationProp = NativeStackNavigationProp<
 // separate component into a feature and leave this as only the screen containing the feature component
 export function BookshelfScreen() {
   const navigation = useNavigation<BookshelfNavigationProp>();
-  const mockBooks = getMockBooks(8) as Book[];
+  const mockBooks = getMockShelfBooks(8) as ShelfBook[];
   const { colors } = useTheme();
   const themedStyles = styles(colors);
 
@@ -24,7 +24,6 @@ export function BookshelfScreen() {
     <View style={themedStyles.container}>
         <View style={themedStyles.searchContainer}>
           <TextInput style={themedStyles.input} />
-          {/* filter button shows filter options */}
           <IconButton icon="funnel" />
         </View>
         <View style={themedStyles.border} />

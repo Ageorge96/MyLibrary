@@ -1,10 +1,11 @@
 import { StyleSheet, Text, View } from 'react-native';
 import { HomeSection } from '../features/home-section';
-import { Book } from '../common/types';
-import { getMockBooks } from '../common/constants/mocks';
+import { getMockShelfBooks } from '../common/constants/mocks';
+import { ShelfBook } from '@classes/shelf-book';
+
 
 export function HomeScreen() {
-  const mockBookmarks = getMockBooks(4) as Array<Book>; //check inference
+  const mockBookmarks = getMockShelfBooks(4) as Array<ShelfBook>; //check inference
 
   return (
     <View style={styles.container}>

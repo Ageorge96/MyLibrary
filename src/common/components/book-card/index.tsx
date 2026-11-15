@@ -1,16 +1,15 @@
 import { Text, View } from 'react-native';
 import { styles } from './styles';
-import { Book } from '../../types';
 import { useTheme } from '@react-navigation/native';
 import { Cover } from '../cover';
+import { ShelfBook } from '@classes/shelf-book';
 
-export function BookCard({
-  title,
-  author,
-  genre,
-  status,
-  cover, // 'https://www.thebookdesigner.com/wp-content/uploads/2024/02/91pSpl1oVVL._SL1500_.jpg'
-}: Book) {
+interface BookCardProps {
+  book: ShelfBook;
+}
+
+export function BookCard({ book }: BookCardProps) {
+  const { title, author, genre, status, cover } = book.itemDetails;
   const { colors } = useTheme();
   const themedStyles = styles(colors);
 
@@ -26,8 +25,8 @@ export function BookCard({
         <Text numberOfLines={1} style={themedStyles.cardHeader}>
           By {author}
         </Text>
-        <Text style={themedStyles.cardText} >Genre: {genre}</Text>
-        <Text style={themedStyles.cardText} >Status: {status}</Text>
+        <Text style={themedStyles.cardText}>Genre: {genre}</Text>
+        <Text style={themedStyles.cardText}>Status: {status}</Text>
       </View>
     </View>
   );

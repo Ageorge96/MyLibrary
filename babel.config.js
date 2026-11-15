@@ -6,10 +6,11 @@ module.exports = {
       {
         root: ['./src'],
         alias: {
-          "@common": "./src/common",
+          '@common': './src/common',
           '@components': './src/common/components',
-        }
-      }
-    ]
-  ]
+          '@classes': './src/core/classes',
+        },
+      },
+    ],
+  ],
 };

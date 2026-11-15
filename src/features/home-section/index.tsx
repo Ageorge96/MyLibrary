@@ -1,11 +1,11 @@
 import { BookCard } from '@components/book-card';
 import { FlatList, Text, View } from 'react-native';
 import { styles } from './styles';
-import { Book } from '../../common/types';
+import { ShelfBook } from '@classes/shelf-book';
 
 interface HomeSectionProps {
   title: string;
-  books: Book[];
+  books: ShelfBook[];
 }
 
 export function HomeSection({ title, books }: HomeSectionProps) {
@@ -14,7 +14,7 @@ export function HomeSection({ title, books }: HomeSectionProps) {
       <Text style={styles.sectionHeading}>{title}</Text>
       <FlatList
         data={books}
-        renderItem={item => <BookCard {...item.item} />}
+        renderItem={item => <BookCard book={item.item} />}
         ItemSeparatorComponent={<View style={styles.itemSeparator} />}
         keyExtractor={item => item.title}
         showsHorizontalScrollIndicator={false}

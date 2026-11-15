@@ -17,7 +17,7 @@ export function DropDown({ label, placeholder, data, onChange, value }: DropDown
         placeholder={placeholder}
         placeholderStyle={themedStyles.dropDownText}
         value={value}
-        onChange={onChange}
+        onChange={item => onChange(item.value)}
         labelField={'label'}
         valueField={'value'}
         style={themedStyles.input}

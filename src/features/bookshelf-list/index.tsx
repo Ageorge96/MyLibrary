@@ -1,12 +1,12 @@
 import { ShelfItem } from '@components/shelf-item';
-import { FlatList, View } from 'react-native';
-import { Book } from '@common/types';
+import { FlatList, Text, View } from 'react-native';
 import { styles } from './styles';
 import { useBottomTabBarHeight } from '@react-navigation/bottom-tabs';
 import { useTheme } from '@react-navigation/native';
+import { ShelfBook } from '@classes/shelf-book';
 
 interface BookshelfListProps {
-  books: Book[];
+  books: ShelfBook[];
 }
 
 export function BookshelfList({ books }: BookshelfListProps) {
@@ -16,12 +16,26 @@ export function BookshelfList({ books }: BookshelfListProps) {
 
   return (
     <View style={themedStyles.container}>
-      <FlatList
-        data={books}
-        renderItem={item => <ShelfItem {...item.item} />}
-        ItemSeparatorComponent={<View style={themedStyles.itemSeparator} />}
-        contentContainerStyle={{ paddingBottom: tabBarHeight + 24 }}
-      />
+      {books.length !== 0 ? (
+        <FlatList
+          data={books}
+          renderItem={item => <ShelfItem book={item.item} />}
+          ItemSeparatorComponent={<View style={themedStyles.itemSeparator} />}
+          contentContainerStyle={{ paddingBottom: tabBarHeight + 24 }}
+          keyExtractor={item => item.title}
+        />
+      ) : (
+        <View
+          style={{
+            height: '100%',
+            width: '100%',
+            alignItems: 'center',
+            justifyContent: 'center',
+          }}
+        >
+          <Text style={{fontSize: 24}} >Your Bookshelf is empty</Text>
+        </View>
+      )}
     </View>
   );
 }
